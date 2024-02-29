@@ -9,6 +9,8 @@ body{padding:0;margin:0;background-color:var(--kg-bg);color:var(--kg-fg);font-fa
 
 .d-flex{display:flex;}
 .d-grid{display:grid;}
+.d-block{display:block;}
+.d-inline{display:inline;}
 
 .center{text-align:center;}
 .d-flex.center{align-items:center;justify-content:center;}
@@ -19,22 +21,13 @@ body{padding:0;margin:0;background-color:var(--kg-bg);color:var(--kg-fg);font-fa
 .no-wrap{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
 
 .btn{cursor:pointer;}
-.btn-outline{
-    background-color:var(--kg-bg);
-    border:solid 1px var(--th-color);
-    border-radius:.4rem;
-    color:var(--th-color);
-    font-size:16px;
-    padding:.4rem .3rem;
-    text-decoration:none;
-    text-align:center;
-    font-family:var(--kg-font);
-    margin:.3rem;
-    transition:background-color 200ms, color 150ms;
-}
+.btn-full{border:solid 1px var(--th-color);background-color:var(--th-color);border-radius:.4rem;color:var(--kg-bg);font-size:16px;padding:.4rem .3rem;text-decoration:none;text-align:center;font-family:var(--kg-font);margin:.3rem;transition:background-color 200ms, color 150ms;}
+.btn-full:hover{background-color:var(--kg-bg);color:var(--th-color);}
+.btn-outline{background-color:var(--kg-bg);border:solid 1px var(--th-color);border-radius:.4rem;color:var(--th-color);font-size:16px;padding:.4rem .3rem;text-decoration:none;text-align:center;font-family:var(--kg-font);margin:.3rem;transition:background-color 200ms, color 150ms;}
 .btn-outline:hover{background-color:var(--th-color);color:var(--kg-bg);}
 .btn-lg{font-size:19px;}
 .btn-sm{font-size:13px;}
+
 .link{color:var(--th-color);}
 
 .primary{--th-color:var(--kg-primary);}
@@ -43,11 +36,16 @@ body{padding:0;margin:0;background-color:var(--kg-bg);color:var(--kg-fg);font-fa
 .border-2{border:solid var(--kg-fg-darker) 2px;}
 .border-3{border:solid var(--kg-fg-darker) 3px;}
 .border-4{border:solid var(--kg-fg-darker) 4px;}
+.border-5{border:solid var(--kg-fg-darker) 5px;}
 
 .radius-1{border-radius:.2rem;}
 .radius-2{border-radius:.4rem;}
 .radius-3{border-radius:.6rem;}
 .radius-4{border-radius:.8rem;}
+.radius-5{border-radius:1rem;}
+.radius-6{border-radius:1.2rem;}
+
+.circle{border-radius:100%;}
 
 .p-0{padding:0;}
 .p-1{padding:.5rem;}
@@ -156,6 +154,6 @@ body{padding:0;margin:0;background-color:var(--kg-bg);color:var(--kg-fg);font-fa
 
 .txt-normal{text-decoration:none;color:var(--kg-fg);}
 
-.img-sq-sm{width:80px;height:80px;}
-.img-sq-md{width:120px;height:120px;}
-.img-sq-lg{width:360px;height:360px;}
+.img-sq-sm{width:4rem;height:4rem;}
+.img-sq-md{width:8rem;height:8rem;}
+.img-sq-lg{width:15rem;height:15rem;}

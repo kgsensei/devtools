@@ -38,6 +38,7 @@
 
         <link rel="stylesheet" href="./highlight/styles/github-dark.min.css">
         <script src="./highlight/highlight.min.js"></script>
+        <script async src="https://kgsensei.dev/js/ka.js"></script>
     </head>
     <body>
         <div id="sidebar" class="p-2">
@@ -48,15 +49,21 @@
             <a href="./" class="link primary">Return to Home</a><br><br>
             <a href="#setup-installation" class="link primary">Setup/Installation</a><br>
             <a href="#margin-and-padding" class="link primary">Margin and Padding</a><br>
+            <a href="#fs-and-headers" class="link primary">Font Size and Headers</a><br>
+            <a href="#buttons" class="link primary">Buttons</a><br>
+            <a href="#links" class="link primary">Links</a><br>
+            <a href="#borders-and-radii" class="link primary">Borders and Radii</a><br>
+            <a href="#display-and-layouts" class="link primary">Display and Layouts</a><br>
+            <a href="#extras" class="link primary">Extras</a>
         </div>
         <div id="content" class="p-3">
-        <h1>customs.css Docs</h1>
+        <h1>Customs.css Docs</h1>
         <hr>
         <h2 id="setup-installation">Setup/Installation</h2>
         <div class="p-1">
             All you need to do is add the customs.css library to your html file.
             In the head tag just add these lines of code:
-            <pre><code class="border border-1 radius-2 m-1 language-html">&lt;style&gt;
+            <pre><code class="border-1 radius-2 m-1 language-html">&lt;style&gt;
 :root {
     --kg-bg: rgb(25, 32, 40);
     --kg-fg: rgb(225, 225, 245);
@@ -80,10 +87,10 @@
         <div class="p-1">
             Margins in customs.css are almost exactly like Bootstrap. You have the `m` prefix, then a hyphen, then
             the value suffix. For example:
-            <pre><code class="border border-1 radius-2 m-1 language-html">&lt;div class="m-2"&gt;Hello World!&lt;/div&gt;</code></pre>
+            <pre><code class="border-1 radius-2 m-1 language-html">&lt;div class="m-2"&gt;Hello World!&lt;/div&gt;</code></pre>
             The main difference is the values, we find Bootstrap can be limiting sometimes when we need to make very "empty"
             designs, so there are some extra margin values. These values are the same for padding (p-1 is .5rem, p-2 is 1rem, p-3 is 1.5rem, etc.)
-            <pre><code class="border border-1 radius-2 m-1 language-css">.m-0 {margin: 0;}
+            <pre><code class="border-1 radius-2 m-1 language-css">.m-0 {margin: 0;}
 .m-1 {margin: .5rem;}
 .m-2 {margin: 1rem;}
 .m-3 {margin: 1.5rem;}
@@ -97,6 +104,167 @@
             values. Just replace `m` with `p`. For example, `pt` for padding-top, `pb` for padding-bottom, etc.<br><br>
             Another helpful feature of customs.css is the existance of zero values, if you want to remove the margin
             on top of an h1 tag (added by default from the browser) you can add the `mt-0` class to it.
+        </div>
+        <hr>
+        <h2 id="fs-and-headers">Font Size and Headers</h2>
+        <div class="p-1">
+            Again, similar to Bootstrap, you can adjust the font size using `fs-{1-6}`.
+            1 being 1rem, 2 is 1.1rem, 3 is 1.2rem, 4 is 1.3rem, etc.
+            There are also header override classes `h{1-3}`. h1 being 2.7rem, h2 is 2rem,
+            and h3 is 1.6rem. Below is an example with all of the different font sizes.
+            <div class="fs-1 p-1">.fs-1</div>
+            <div class="fs-2 p-1">.fs-2</div>
+            <div class="fs-3 p-1">.fs-3</div>
+            <div class="fs-4 p-1">.fs-4</div>
+            <div class="fs-5 p-1">.fs-5</div>
+            <div class="fs-6 p-1">.fs-6</div>
+            <div class="h3 p-1">.h3</div>
+            <div class="h2 p-1">.h2</div>
+            <div class="h1 p-1">.h1</div>
+        </div>
+        <hr>
+        <h2 id="buttons">Buttons</h2>
+        <div class="p-1">
+            Buttons are an important part of any website. There are a bunch of different button
+            customizations provided by customs.css.
+            Use the `btn` class to add a pointer to any element.
+            <pre><code class="border-1 radius-2 m-1 language-html">&lt;button class="btn"&gt;Hello World!&lt;/button&gt;</code></pre>
+            Output:
+            <button class="btn">Hello World!</button>
+            <br><br>
+            Great! Let's make it a little better now.
+            <br><br>
+            Use `btn-outline` or `btn-full` to determine the style of button to be shown.
+            <br>
+            Outline Example:
+            <pre><code class="border-1 radius-2 m-1 language-html">&lt;button class="btn btn-outline"&gt;Hello World!&lt;/button&gt;</code></pre>
+            Output:
+            <button class="btn btn-outline">Hello World!</button>
+            <br><br>
+            But wait, there's no outline?! This is because we haven't defined a theme color for the button!
+            Let's make this button our primary color, remember setting `--kg-primary` in the setup?
+            <br>
+            Outline Primary Example:
+            <pre><code class="border-1 radius-2 m-1 language-html">&lt;button class="btn btn-outline primary"&gt;Hello World!&lt;/button&gt;</code></pre>
+            Output:
+            <button class="btn btn-outline primary">Hello World!</button>
+            <br><br>
+            You can also adjust the size of the buttons.
+            <pre><code class="border-1 radius-2 m-1 language-html">&lt;button class="btn btn-outline primary btn-sm"&gt;Hello World!&lt;/button&gt;
+&lt;button class="btn btn-outline primary btn-lg"&gt;Hello World!&lt;/button&gt;</code></pre>
+            Output:
+            <button class="btn btn-outline primary btn-sm">Hello World!</button>
+            <button class="btn btn-outline primary btn-lg">Hello World!</button>
+            <br><br>
+            You can also add more margin and padding to buttons but we won't show an example because you
+            can figure that one out.
+            <br><br>
+            What if I want to add my own button color classes?<br>
+            It's actually really easy! In fact, we did that on
+            <a target="_blank" href="https://ap.kgsensei.dev" class="link primary">ap.kgsensei.dev</a>!<br>
+            Code:
+            <pre><code class="border-1 radius-2 m-1 language-css">.custom-btn-color {
+    --th-color: #FFCE42;
+}</code></pre><style>.custom-btn-color{--th-color:#FFCE42;}</style>
+            <pre><code class="border-1 radius-2 m-1 language-html">&lt;button class="btn btn-outline custom-btn-color"&gt;Hello World!&lt;/button&gt;</code></pre>
+            Output:
+            <button class="btn btn-outline custom-btn-color">Hello World!</button>
+            <br><br>
+            All you have to do is set the `--th-color` variable in a css class
+            and it will automatically style the button!
+            <br><br>
+            One last thing before we end the buttons section. You can make links look like buttons.
+            All you need to do is add the button classes to an `a` tag. Custom color classes will work
+            the same on `a` tags with the button classes.
+            <pre><code class="border-1 radius-2 m-1 language-html">&lt;a href="#" class="btn btn-outline primary"&gt;This is a link, but looks like a button!&lt;/a&gt;</code></pre>
+            <a href="#" class="btn btn-outline primary">This is a link, but looks like a button!</a>
+        </div>
+        <hr>
+        <h2 id="links">Links</h2>
+        <div class="p-1">
+            If you don't add any classes to a link then it will appear normally, <a href="#links">like this</a>.
+            But if you add the `link` class then it looks <a href="#links" class="link">like this</a>!
+            That's boring though, and it blends in with normal text too much, now that we added the link
+            class, we can add color classes, just like buttons! For this example we'll use the same
+            `custom-btn-color` class from the buttons section.
+            <pre><code class="border-1 radius-2 m-1 language-html">&lt;a href="#links" class="link custom-btn-color"&gt;Example Link&lt;/a&gt;</code></pre>
+            Output:
+            <a href="#links" class="link custom-btn-color">Example Link</a><br><br>
+            There's also a class that can remove all the effects of a link, it's advised not to use
+            this under most circumstances as it lowers accessibility of your website.
+            <pre><code class="border-1 radius-2 m-1 language-html">&lt;a href="#links" class="txt-normal"&gt;Example Link&lt;/a&gt;</code></pre>
+            Output:
+            <a href="#links" class="txt-normal">Example Link</a>
+        </div>
+        <hr>
+        <h2 id="borders-and-radii">Borders and Radii</h2>
+        <div class="p-1">
+            For most of this example we'll use a 100x100px div. This one has the `border-1` class.
+            <pre><code class="border-1 radius-2 m-1 language-html">&lt;div class="border-1" style="width:100px;height:100px;"&gt;&lt;/div&gt;</code></pre>
+            <div class="border-1" style="width:100px;height:100px;"></div>
+            If it isn't obvious, the `border-1` class adds a border with a width of 1px to the div.
+            Now let's try `border-3`.
+            <pre><code class="border-1 radius-2 m-1 language-html">&lt;div class="border-3" style="width:100px;height:100px;"&gt;&lt;/div&gt;</code></pre>
+            <div class="border-3" style="width:100px;height:100px;"></div>
+            The border classes you can use are `border-{1-5}` with `border-1` being 1px, `border-2` being 2px, etc.<br>
+            Great, now lets try adding some radius to it! We'll start with `radius-1`.
+            <pre><code class="border-1 radius-2 m-1 language-html">&lt;div class="border-1 radius-1" style="width:100px;height:100px;"&gt;&lt;/div&gt;</code></pre>
+            <div class="border-1 radius-1" style="width:100px;height:100px;"></div>
+            `radius-1` will set the border radius to .2rem, `radius-2` is .4rem, `radius-3` is .6rem, etc. Let's try `radius-6`!
+            <pre><code class="border-1 radius-2 m-1 language-html">&lt;div class="border-1 radius-6" style="width:100px;height:100px;"&gt;&lt;/div&gt;</code></pre>
+            <div class="border-1 radius-6" style="width:100px;height:100px;"></div>
+            Radius-6 is the highest you can go, but let's say you're working on a social media platform and need
+            circular profile pictures? What then? Just add the `circle` class to the div (or img for the example).
+            <pre><code class="border-1 radius-2 m-1 language-html">&lt;div class="border-1 circle" style="width:100px;height:100px;"&gt;&lt;/div&gt;</code></pre>
+            <div class="border-1 circle" style="width:100px;height:100px;"></div>
+        </div>
+        <hr>
+        <h2 id="display-and-layouts">Display and Layouts</h2>
+        <div class="p-1">
+            Just like Bootstrap, you can use `d-block` or something like that to define the display property.
+            Currently values supported are: `d-flex`, `d-grid`, `d-block`, `d-inline`.
+            <br><br>
+            We probably don't need to talk about display anymore, if you know css that should be pretty
+            straight forward. If you're using `d-flex` and you need a column for some reason you can use
+            `flex-col`.
+            <br><br>
+            There is also a very powerful center class, called `center`. It doesn't work 100% of the time
+            but it's been tested in flexboxes, grid layouts, and just in the body tag.
+        </div>
+        <hr>
+        <h2 id="extras">Extras</h2>
+        <div class="p-1">
+            This part is going to be brief since these features aren't really enough to justify their
+            own section, we'll only briefly cover each feature instead of doing a deep dive in them.
+            <br><br>
+            Image sizing (format, [type]-[shape]-[size]):
+            <pre><code class="border-1 radius-2 m-1 language-css">.img-sq-sm {
+    width: 4rem;
+    height: 4rem;
+}
+.img-sq-md {
+    width: 8rem;
+    height: 8rem;
+}
+.img-sq-lg {
+    width: 15rem;
+    height: 15rem;
+}</code></pre>
+            No wrap:
+            <pre><code class="border-1 radius-2 m-1 language-html">&lt;p class="no-wrap"&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit.&lt;/p&gt;</code></pre>
+            Width:
+            <pre><code class="border-1 radius-2 m-1 language-css">.w-100 {
+    width: 100%;
+}
+.w-75 {
+    width: 75%;
+}
+.w-50 {
+    width: 50%;
+}
+.w-25 {
+    width: 25%;
+}</code></pre>
         </div>
         <script>hljs.highlightAll();</script>
     </body>
