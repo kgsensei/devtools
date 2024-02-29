@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>kgsensei web-devtools</title>
+
+        <style>
+            :root {
+                --kg-bg: rgb(25, 32, 40);
+                --kg-fg: rgb(225, 225, 245);
+                --kg-fg-darker: rgb(190, 190, 190);
+
+                --kg-primary: #1EACF4;
+
+                --kg-font: Helvetica, sans-serif;
+            }
+        </style>
+        <link rel="stylesheet" href="./custom.css">
+
+        <style>
+            #sidebar {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 15%;
+                height: 100%;
+                background-color: rgba(0,0,0,0.5);
+            }
+
+            #content {
+                position: absolute;
+                top: 0;
+                left: 15%;
+                width: 85%;
+                height: 100%;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="sidebar" class="p-2">
+            <h1 class="mt-0">devtools</h1>
+            <h2>by kgsensei</h2>
+            <hr>
+            <p class="fs-2">
+                All tools are free to use, however,
+                please give credit where it is due.
+            </p>
+            <hr>
+            <p class="fs-2">
+                To view documentation and setup resources
+                just click on the tool you want to use.
+            </p>
+        </div>
+        <div id="content" class="p-3">
+            <a href="./customs-docs.html" class="btn border border-1 radius-2 p-2 d-flex mb-4 txt-normal">
+                <div>
+                    <img src="./custom-css-ico.png" class="img-sq-md radius-3">
+                </div>
+                <div class="ms-3 txt-normal">
+                    <h1 class="mt-2">Customs CSS</h1>
+                    <p class="fs-3">
+                        A css library designed to be lightweight and highly customizable.
+                        Heavily inspired from Bootstrap, currently running multiple of my websites.
+                    </p>
+                </div>
+            </a>
+
+            <a href="./simplejs-docs.html" class="btn border border-1 radius-2 p-2 d-flex txt-normal">
+                <div>
+                    <img src="./simple-js-ico.png" class="img-sq-md radius-3">
+                </div>
+                <div class="ms-3">
+                    <h1 class="mt-2">Simple JS</h1>
+                    <p class="fs-3">
+                        A JS library designed to cut down on the amount of code required to
+                        make nice, reactive websites. It's very lightweight and minimal but it
+                        gets the job done.
+                    </p>
+                </div>
+            </a>
+        </div>
+    </body>
+</html>

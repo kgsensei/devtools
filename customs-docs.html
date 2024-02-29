@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>kgsensei web-devtools</title>
+
+        <style>
+            :root {
+                --kg-bg: rgb(25, 32, 40);
+                --kg-fg: rgb(225, 225, 245);
+                --kg-fg-darker: rgb(190, 190, 190);
+
+                --kg-primary: #1EACF4;
+
+                --kg-font: Helvetica, sans-serif;
+            }
+        </style>
+        <link rel="stylesheet" href="./custom.css">
+
+        <style>
+            #sidebar {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 15%;
+                height: 100%;
+                background-color: rgba(0,0,0,0.5);
+            }
+
+            #content {
+                position: absolute;
+                top: 0;
+                left: 15%;
+                width: 85%;
+                height: 100%;
+            }
+        </style>
+
+        <link rel="stylesheet" href="./highlight/styles/github-dark.min.css">
+        <script src="./highlight/highlight.min.js"></script>
+    </head>
+    <body>
+        <div id="sidebar" class="p-2">
+            <img class="img-sq-md radius-3" src="./custom-css-ico.png">
+            <h1 class="mt-0">customs.css</h1>
+            <h2>by kgsensei</h2>
+            <hr>
+            <a href="./" class="link primary">Return to Home</a><br><br>
+            <a href="#setup-installation" class="link primary">Setup/Installation</a><br>
+            <a href="#margin-and-padding" class="link primary">Margin and Padding</a><br>
+        </div>
+        <div id="content" class="p-3">
+        <h1>customs.css Docs</h1>
+        <hr>
+        <h2 id="setup-installation">Setup/Installation</h2>
+        <div class="p-1">
+            All you need to do is add the customs.css library to your html file.
+            In the head tag just add these lines of code:
+            <pre><code class="border border-1 radius-2 m-1 language-html">&lt;style&gt;
+:root {
+    --kg-bg: rgb(25, 32, 40);
+    --kg-fg: rgb(225, 225, 245);
+    --kg-fg-darker: rgb(190, 190, 190);
+
+    --kg-primary: rgb(30, 172, 244);
+
+    --kg-font: Helvetica, sans-serif;
+}
+&lt;/style&gt;
+&lt;link rel="stylesheet" src="https://dev.kgsensei.dev/custom.min.css"&gt;</code></pre>
+            As you can probably guess, the link tag includes the customs.css library, the other style tag defined defaults
+            for the customs.css library to use, it's very important that you do this step or the customs.css library won't work.
+            Before you start the documentation, you should know that customs.css takes heavy inspiration from Bootstrap.
+            The reason it was created is because to customize Bootstrap you have to do custom builds and stuff. customs.css
+            is meant to be a highly customizable and convenient replacement. No pre-compiling required. With that being said,
+            it does sacrifice some optimization for the convenience. We feel that the DevX payoff is worth it though.
+        </div>
+        <hr>
+        <h2 id="margin-and-padding">Margin and Padding</h2>
+        <div class="p-1">
+            Margins in customs.css are almost exactly like Bootstrap. You have the `m` prefix, then a hyphen, then
+            the value suffix. For example:
+            <pre><code class="border border-1 radius-2 m-1 language-html">&lt;div class="m-2"&gt;Hello World!&lt;/div&gt;</code></pre>
+            The main difference is the values, we find Bootstrap can be limiting sometimes when we need to make very "empty"
+            designs, so there are some extra margin values. These values are the same for padding (p-1 is .5rem, p-2 is 1rem, p-3 is 1.5rem, etc.)
+            <pre><code class="border border-1 radius-2 m-1 language-css">.m-0 {margin: 0;}
+.m-1 {margin: .5rem;}
+.m-2 {margin: 1rem;}
+.m-3 {margin: 1.5rem;}
+.m-4 {margin: 2rem;}
+.m-5 {margin: 2.5rem;}
+.m-6 {margin: 5rem;}
+.m-7 {margin: 10rem;}
+.m-8 {margin: 15rem;}</code></pre>
+            Additionally, you can use `mt` for margin-top, `mb` for margin-bottom, `ms` for margin-start/margin-left, and `me`
+            for margin-end/margin-right. Of course, all of the margin properties are reflexted on padding, with all the same
+            values. Just replace `m` with `p`. For example, `pt` for padding-top, `pb` for padding-bottom, etc.<br><br>
+            Another helpful feature of customs.css is the existance of zero values, if you want to remove the margin
+            on top of an h1 tag (added by default from the browser) you can add the `mt-0` class to it.
+        </div>
+        <script>hljs.highlightAll();</script>
+    </body>
+</html>

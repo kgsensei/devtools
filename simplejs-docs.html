@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>kgsensei web-devtools</title>
+
+        <style>
+            :root {
+                --kg-bg: rgb(25, 32, 40);
+                --kg-fg: rgb(225, 225, 245);
+                --kg-fg-darker: rgb(190, 190, 190);
+
+                --kg-primary: #1EACF4;
+
+                --kg-font: Helvetica, sans-serif;
+            }
+        </style>
+        <link rel="stylesheet" href="./custom.css">
+
+        <style>
+            #sidebar {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 15%;
+                height: 100%;
+                background-color: rgba(0,0,0,0.5);
+            }
+
+            #content {
+                position: absolute;
+                top: 0;
+                left: 15%;
+                width: 85%;
+                height: 100%;
+            }
+        </style>
+
+        <link rel="stylesheet" href="./highlight/styles/github-dark.min.css">
+        <script src="./highlight/highlight.min.js"></script>
+    </head>
+    <body>
+        <div id="sidebar" class="p-2">
+            <img class="img-sq-md radius-3" src="./simple-js-ico.png">
+            <h1 class="mt-0">simple.js</h1>
+            <h2>by kgsensei</h2>
+            <hr>
+            <a href="./" class="link primary">Return to Home</a><br><br>
+            <a href="#setup-installation" class="link primary">Setup/Installation</a><br>
+            <a href="#dom-manipulation" class="link primary">Dom Manipulation</a><br>
+            <a href="#data-storage" class="link primary">Data Storage</a><br>
+            <a href="#page-variables" class="link primary">Page Variables</a><br>
+            <a href="#data-manipulation-creation" class="link primary">Data Manipulation/Creation</a><br>
+            <a href="#ui-tools" class="link primary">UI Tools</a><br>
+            <a href="#miscellaneous" class="link primary">Miscellaneous</a>
+        </div>
+        <div id="content" class="p-3">
+        <h1>Simple.js Docs</h1>
+        <hr>
+        <h2 id="setup-installation">Setup/Installation</h2>
+        <div class="p-1">
+            All you need to do is add the simple.js library to your html file.
+            In the head tag just add this line of code:
+            <pre><code class="border border-1 radius-2 m-1 language-html">&lt;script src="https://dev.kgsensei.dev/simple.min.js"&gt;&lt;/script&gt;</code></pre>
+        </div>
+        <hr>
+        <h2 id="dom-manipulation">Dom Manipulation</h2>
+        <div class="p-1">
+            Get element by id, will return html element as object. Function name stands for <i>Get ID</i>.
+            <pre><code class="border border-1 radius-2 m-1 language-js">gid("example_id") // Will return html object, same as document.getElementById()</code></pre>
+            Get elements by class name, will return html elements as an array of objects. Function name stands for <i>Get Class Name</i>.
+            <pre><code class="border border-1 radius-2 m-1 language-js">gcn("example_class_name") // Will return html object array, same as document.getElementsByClassName()</code></pre>
+            Check if element with id exists, will return bool. Function name stands for <i>ID Exists</i>.
+            <pre><code class="border border-1 radius-2 m-1 language-js">idex("example_id") // Will return bool</code></pre>
+            <br><br>
+            Append HTML to html object, will add specified html
+            <pre><code class="border border-1 radius-2 m-1 language-js">gid("example_id").addHTML("Hello World!") // Will add 'Hello World!' to end of the #example_id content</code></pre>
+            Prepend HTML to html object, will add specified html
+            <pre><code class="border border-1 radius-2 m-1 language-js">gid("example_id").preHTML("Hello World!") // Will add 'Hello World!' to start of the #example_id content</code></pre>
+            Set HTML content in html object, will set specified html
+            <pre><code class="border border-1 radius-2 m-1 language-js">gid("example_id").setHTML("Hello World!") // Will set #example_id content to 'Hello World!'</code></pre>
+            Set text content in html object, will set specified text
+            <pre><code class="border border-1 radius-2 m-1 language-js">gid("example_id").setText("Hello World!") // Will set #example_id content to 'Hello World!'</code></pre>
+            <br><br>
+            Mirror of insertAdjacentHTML.beforeBegin
+            <pre><code class="border border-1 radius-2 m-1 language-js">gid("example_id").insertBefore("&lt;i&gt;Hello World!&lt;/i&gt;")</code></pre>
+            Mirror of insertAdjacentHTML.afterBegin
+            <pre><code class="border border-1 radius-2 m-1 language-js">gid("example_id").insertTop("&lt;i&gt;Hello World!&lt;/i&gt;")</code></pre>
+            Mirror of insertAdjacentHTML.beforeEnd
+            <pre><code class="border border-1 radius-2 m-1 language-js">gid("example_id").insertBottom("&lt;i&gt;Hello World!&lt;/i&gt;")</code></pre>
+            Mirror of insertAdjacentHTML.afterEnd
+            <pre><code class="border border-1 radius-2 m-1 language-js">gid("example_id").insertEnd("&lt;i&gt;Hello World!&lt;/i&gt;")</code></pre>
+            <br><br>
+            Set element attribute
+            <pre><code class="border border-1 radius-2 m-1 language-js">gid("example_id").setAttr("data-key", "value") // Sets the 'data-key' attribute on #example_id to 'value'</code></pre>
+            Get element attribute
+            <pre><code class="border border-1 radius-2 m-1 language-js">gid("example_id").getAttr("data-key") // Gets the value of the 'data-key' attribute on #example_id</code></pre>
+            <br><br>
+            Hide html element by id
+            <pre><code class="border border-1 radius-2 m-1 language-js">gid("example_id").hide() // Will hide #example_id from viewport (display: none)</code></pre>
+            Show html element by id
+            <pre><code class="border border-1 radius-2 m-1 language-js">gid("example_id").show() // Will un-hide #example_id from viewport (display: block)</code></pre>
+            <br><br>
+            Get element width
+            <pre><code class="border border-1 radius-2 m-1 language-js">gid("example_id").width() // Will return pixel value for width</code></pre>
+            Get element height
+            <pre><code class="border border-1 radius-2 m-1 language-js">gid("example_id").height() // Will return pixel value for height</code></pre>
+            Get element top position
+            <pre><code class="border border-1 radius-2 m-1 language-js">gid("example_id").top() // Will return pixel value for top</code></pre>
+            Get element left position
+            <pre><code class="border border-1 radius-2 m-1 language-js">gid("example_id").left() // Will return pixel value for left</code></pre>
+            <br><br>
+            Value getter/setter for inputs
+            <pre><code class="border border-1 radius-2 m-1 language-js">gid("example_id").val() // Will get the input value for #example_id
+gid("example_id").val("") // Will set the input value for #example_id
+gid("example_id").val("placeholder") // Will set the input value for #example_id</code></pre>
+Get parent element
+            <pre><code class="border border-1 radius-2 m-1 language-js">gid("example_id").parent() // Gets the parent element of #example_id</code></pre>
+            <br><br>
+            Add event listener, usage is the same as normal. Function name stands for <i>Add Event Listener</i>.
+            <pre><code class="border border-1 radius-2 m-1 language-js">gid("example_id").ael() // Will add event listener
+
+// Full Example:
+gid("example_id").ael("click", myFunction)
+
+function myFunction() {
+    alert("Hello World!")
+}</code></pre>
+            Remove event listener, usage is the same as normal. Function name stands for <i>Remove Event Listener</i>.
+            <pre><code class="border border-1 radius-2 m-1 language-js">gid("example_id").rel() // Will remove event listener
+
+// Full Example:
+gid("example_id").rel("click", myFunction)
+
+function myFunction() {
+    alert("Hello World!")
+}</code></pre>
+        </div>
+        <hr>
+        <h2 id="data-storage">Data Storage</h2>
+        <div class="p-1">
+            Use the localStorage API to save data to the local machine
+            <pre><code class="border border-1 radius-2 m-1 language-js">simple.save(&lt;key&gt;, &lt;data&gt;) // Saves data to key</code></pre>
+            Use the localStorage API to load data from the local machine
+            <pre><code class="border border-1 radius-2 m-1 language-js">simple.load(&lt;key&gt;) // Loads data from key</code></pre>
+        </div>
+        <hr>
+        <h2 id="page-variables">Page Variables</h2>
+        <div class="p-1">
+            Get current page width in pixels, updates on window resize
+            <pre><code class="border border-1 radius-2 m-1 language-js">simple.page.width // Current page width in pixels</code></pre>
+            Get current page height in pixels, updates on window resize
+            <pre><code class="border border-1 radius-2 m-1 language-js">simple.page.height // Current page height in pixels</code></pre>
+        </div>
+        <hr>
+        <h2 id="data-manipulation-creation">Data Manipulation/Creation</h2>
+        <div class="p-1">
+            Pick random item from array
+            <pre><code class="border border-1 radius-2 m-1 language-js">[1, 2, 3, 4, 5].sample() // Will return any one item from array</code></pre>
+            Check if string is uppercase
+            <pre><code class="border border-1 radius-2 m-1 language-js">"Hello World!".isUpper() // Will return false
+"HELLO WORLD!".isUpper() // Will return true</code></pre>
+            Check if string is lowercase
+            <pre><code class="border border-1 radius-2 m-1 language-js">"Hello World!".isLower() // Will return false
+"hello world!".isLower() // Will return true</code></pre>
+            Check if string is empty, except for whitespace
+            <pre><code class="border border-1 radius-2 m-1 language-js">"".isEmpty() // Will return true
+" ".isEmpty() // Will return true
+"_".isEmpty() // Will return false</code></pre>
+            Invert string case
+            <pre><code class="border border-1 radius-2 m-1 language-js">"Hello World".invertCase() // Will return "hELLO wORLD"</code></pre>
+            Parse JSON data from string, same as JSON.parse()
+            <pre><code class="border border-1 radius-2 m-1 language-js">'{"key": "value"}'.JSONify() // Will return JSON data parsed from string</code></pre>
+            Generate random integer between min and max value (inclusive)
+            <pre><code class="border border-1 radius-2 m-1 language-js">simple.randint(min, max) // Will return integer between or of values
+simple.randint(0, 1) // Will return either 0 or 1
+simple.randint(0, 2) // Will return 0, 1, or 2</code></pre>
+            Capitalize first letter in string
+            <pre><code class="border border-1 radius-2 m-1 language-js">"hello".capitalize() // Will return 'Hello'</code></pre>
+        </div>
+        <hr>
+        <h2 id="ui-tools">UI Tools</h2>
+        <div class="p-1">
+            Add class to element
+            <pre><code class="border border-1 radius-2 m-1 language-js">gid("example_id").classAdd("test-class-name")</code></pre>
+            Remove class from element
+            <pre><code class="border border-1 radius-2 m-1 language-js">gid("example_id").classRemove("test-class-name")</code></pre>
+        </div>
+        <hr>
+        <h2 id="miscellaneous">Miscellaneous</h2>
+        <div class="p-1">
+            Opens a given URL in a new tab
+            <pre><code class="border border-1 radius-2 m-1 language-js">simple.openURL("https://example.com") // Will open example.com in a new tab</code></pre>
+        </div>
+        <script>hljs.highlightAll();</script>
+    </body>
+</html>
