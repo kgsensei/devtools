@@ -28,7 +28,7 @@ body{padding:0;margin:0;background-color:var(--kg-bg);color:var(--kg-fg);font-fa
 .btn-lg{font-size:19px;}
 .btn-sm{font-size:13px;}
 
-.link{color:var(--th-color);}
+.text,.link{color:var(--th-color);}
 
 .primary{--th-color:var(--kg-primary);}
 
@@ -86,6 +86,16 @@ body{padding:0;margin:0;background-color:var(--kg-bg);color:var(--kg-fg);font-fa
 .ps-6{padding-left:5rem;}
 .ps-7{padding-left:10rem;}
 .ps-8{padding-left:15rem;}
+
+.pe-0{padding-right:0;}
+.pe-1{padding-right:.5rem;}
+.pe-2{padding-right:1rem;}
+.pe-3{padding-right:1.5rem;}
+.pe-4{padding-right:2rem;}
+.pe-5{padding-right:2.5rem;}
+.pe-6{padding-right:5rem;}
+.pe-7{padding-right:10rem;}
+.pe-8{padding-right:15rem;}
 
 .mx-auto{margin:0 auto;}
 .my-auto{margin:auto 0}
