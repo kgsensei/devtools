@@ -1,0 +1,53 @@
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.75);
+    z-index: 9999;
+}
+
+.modal .dialog {
+    position: absolute;
+    top: 25%;
+    left: 35%;
+    width: 30%;
+    min-height: 40%;
+    background-color: var(--kg-bg);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.dialog .header {
+    font-size: 1.2rem;
+    padding: 0.2rem;
+    border-bottom: solid 1px var(--kg-fg-darker);
+    margin-bottom: 0.4rem;
+}
+
+.dialog .content {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.35rem;
+}
+
+.dialog .footer {
+    margin-top: auto;
+    border-top: solid 1px var(--kg-fg-darker);
+}
+
+.footer .btn {
+    float: right;
+}
+
+@media only screen and (max-device-width: 990px) {
+    .modal .dialog {
+        top: 25%;
+        left: 5%;
+        width: 90%;
+        min-height: 40%;
+    }
+}

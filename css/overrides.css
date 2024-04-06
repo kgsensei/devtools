@@ -1,0 +1,27 @@
+#sidebar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 15%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+
+#content {
+    position: absolute;
+    top: 0;
+    left: 15%;
+    width: 85%;
+    height: 100%;
+}
+
+@media only screen and (max-device-width: 990px) {
+    #sidebar {
+        display: none;
+    }
+
+    #content {
+        width: 100%;
+        left: 0;
+    }
+}

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>kgsensei web-devtools</title>
+
+        <style>
+            :root {
+                --kg-bg: rgb(25, 32, 40);
+                --kg-fg: rgb(225, 225, 245);
+                --kg-fg-darker: rgb(190, 190, 190);
+
+                --kg-primary: #1EACF4;
+
+                --kg-font: Helvetica, sans-serif;
+            }
+        </style>
+        <link rel="stylesheet" href="../custom.min.css">
+        <link rel="stylesheet" href="../custom.modal.min.css">
+
+        <script src="../simple.min.js"></script>
+
+        <script src="../simple.animExt.min.js"></script>
+        <link rel="stylesheet" href="../simple.animExt.min.css">
+        <link rel="stylesheet" href="../css/overrides.css">
+
+        <link rel="stylesheet" href="../highlight/styles/github-dark.min.css">
+        <script src="../highlight/highlight.min.js"></script>
+        <script async src="https://kgsensei.dev/js/ka.js"></script>
+    </head>
+    <body>
+        <div id="sidebar" class="p-2">
+            <img class="img-sq-md radius-3" src="../imgs/custom-css-modal-ico.png">
+            <h1 class="mt-0">c.css ext: modal</h1>
+            <h2>by kgsensei</h2>
+            <hr>
+            <a href="/" class="link primary">Return to Home</a><br><br>
+            <a href="#setup-installation" class="link primary">Setup/Installation</a><br>
+            <a href="#adding-a-modal" class="link primary">Adding A Modal</a>
+        </div>
+        <div id="content" class="p-3">
+        <h1>Custom.css Ext: Modals Docs</h1>
+        <hr>
+        <h2 id="setup-installation">Setup/Installation</h2>
+        <div class="p-1">
+            Since the modals library requires the base custom.css library, you'll need to add both.
+            In the head tag, just add these lines of code:
+            <pre><code class="border-1 radius-2 m-1 language-html">&lt;style&gt;
+    :root {
+        --kg-bg: rgb(25, 32, 40);
+        --kg-fg: rgb(225, 225, 245);
+        --kg-fg-darker: rgb(190, 190, 190);
+
+        --kg-primary: rgb(30, 172, 244);
+
+        --kg-font: Helvetica, sans-serif;
+    }
+&lt;/style&gt;
+&lt;link rel="stylesheet" href="https://dev.kgsensei.dev/custom.min.css"&gt;
+&lt;link rel="stylesheet" href="https://dev.kgsensei.dev/custom.modal.min.css"&gt;</code></pre>
+            We highly recommend learning more about the custom.css library before using the modals extension.
+        </div>
+        <hr>
+        <h2 id="adding-a-modal">Adding A Modal</h2>
+        <div class="p-1">
+            Here's some basic HTML code for adding a modal!
+            <pre><code class="border-1 radius-2 m-1 language-html">&lt;div class="modal" id="exampleModal"&gt;
+    &lt;div class="dialog radius-3"&gt;
+        &lt;div class="header"&gt;Modal Title/Header&lt;/div&gt;
+        &lt;div class="content"&gt;
+            &lt;a class="link primary" target="_blank" href="https://example.com/terms"&gt;Terms of Service&lt;/a&gt;
+            &lt;br&gt;
+            &lt;a class="link primary" target="_blank" href="https://example.com/privacy"&gt;Privacy Policy&lt;/a&gt;
+        &lt;/div&gt;
+        &lt;div class="footer"&gt;
+            &lt;button class="btn btn-outline triary" id="exampleModal_Close"&gt;Close&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div>&gt;</code></pre>
+            Great! Now lets make it actually work, we'll be doing this with some simple.js code, this example includes code from the simple.js animation extension too.
+            <pre><code class="border-1 radius-2 m-1 language-js">gid("exampleModal_Open").ael("click", () => {
+    gid("exampleModal").fadeIn(250)
+})
+
+gid("exampleModal_Close").ael("click", () => {
+    gid("exampleModal").fadeOut(250)
+})</code></pre>
+            Now that we have the code written, lets test it with some buttons!
+            <pre><code class="border-1 radius-2 m-1 language-html">&lt;button class="btn btn-outline primary" id="exampleModal_Open"&gt;Open Modal&lt;/button&gt;</code></pre>
+            And here's what we made:
+            <button class="btn btn-outline primary" id="exampleModal_Open">Open Modal</button>
+        </div>
+        <script>hljs.highlightAll();</script>
+
+        <div class="modal" id="exampleModal">
+            <div class="dialog radius-3">
+                <div class="header">Modal Title/Header</div>
+                <div class="content">
+                    <a class="link primary" target="_blank" href="https://example.com/terms">Terms of Service</a>
+                    <br>
+                    <a class="link primary" target="_blank" href="https://example.com/privacy">Privacy Policy</a>
+                </div>
+                <div class="footer">
+                    <button class="btn btn-outline primary" id="exampleModal_Close">Close</button>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            gid("exampleModal_Open").ael("click", () => {
+                gid("exampleModal").fadeIn(250)
+            })
+
+            gid("exampleModal_Close").ael("click", () => {
+                gid("exampleModal").fadeOut(250)
+            })
+        </script>
+    </body>
+</html>

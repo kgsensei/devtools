@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>kgsensei web-devtools</title>
+
+        <style>
+            :root {
+                --kg-bg: rgb(25, 32, 40);
+                --kg-fg: rgb(225, 225, 245);
+                --kg-fg-darker: rgb(190, 190, 190);
+
+                --kg-primary: #1EACF4;
+
+                --kg-font: Helvetica, sans-serif;
+            }
+        </style>
+        <link rel="stylesheet" href="../custom.min.css">
+        <link rel="stylesheet" href="../css/overrides.css">
+
+        <link rel="stylesheet" href="../highlight/styles/github-dark.min.css">
+        <script src="../highlight/highlight.min.js"></script>
+        <script async src="https://kgsensei.dev/js/ka.js"></script>
+    </head>
+    <body>
+        <div id="sidebar" class="p-2">
+            <img class="img-sq-md radius-3" src="../imgs/simple-js-ext-anim-ico.png">
+            <h1 class="mt-0">s.js ext: anim</h1>
+            <h2>by kgsensei</h2>
+            <hr>
+            <a href="/" class="link primary">Return to Home</a><br><br>
+            <a href="#setup-installation" class="link primary">Setup/Installation</a><br>
+            <a href="#animating" class="link primary">Animating</a><br>
+            <a href="#delays" class="link primary">Delays</a><br>
+            <a href="#callbacks" class="link primary">Callbacks</a>
+        </div>
+        <div id="content" class="p-3">
+        <h1>Simple.js Ext: Animation Docs</h1>
+        <hr>
+        <h2 id="setup-installation">Setup/Installation</h2>
+        <div class="p-1">
+            Simple.js actually isn't a requirement to use the Simple.js animation extension, it is recommended though.
+            Below you'll find the script tags to include for both the normal library and the animation extension.
+            <pre><code class="border border-1 radius-2 m-1 language-html">&lt;script src="https://dev.kgsensei.dev/simple.min.js"&gt;&lt;/script&gt; &lt;!-- Normal Library --&gt;
+
+&lt;script src="https://dev.kgsensei.dev/simple.animExt.min.js"&gt;&lt;/script&gt; &lt;!-- Animation Extension JS --&gt;
+&lt;link rel="stylesheet" href="https://dev.kgsensei.dev/simple.animExt.min.css"&gt; &lt;!-- Animation Extension CSS --&gt;</code></pre>
+        </div>
+        <hr>
+        <h2 id="animating">Animating</h2>
+        <div class="p-1">
+            Fade in an element.
+            <pre><code class="border border-1 radius-2 m-1 language-js">gid("example_id").fadeIn(200) // Will fade in #example_id for a duration of 200ms</code></pre>
+            Fade out an element.
+            <pre><code class="border border-1 radius-2 m-1 language-js">gid("example_id").fadeOut(200) // Will fade out #example_id for a duration of 200ms</code></pre>
+        </div>
+        <hr>
+        <h2 id="delays">Delays</h2>
+        <div class="p-1">
+            Delay a fade in for 1s
+            <pre><code class="border border-1 radius-2 m-1 language-js">gid("example_id").delay(1000).fadeIn(200)</code></pre>
+            Delay a fade out for 1s
+            <pre><code class="border border-1 radius-2 m-1 language-js">gid("example_id").delay(1000).fadeOut(200)</code></pre>
+        </div>
+        <hr>
+        <h2 id="callbacks">Callbacks</h2>
+        <div class="p-1">
+            At the end of every animation function is an optional callback function
+            <pre><code class="border border-1 radius-2 m-1 language-js">gid("example_id").fadeIn(200, () => {
+    console.log("Faded In!") // This will log after 200ms when the animation is finished
+})</code></pre>
+            You can also use them with delays for the same effect
+            <pre><code class="border border-1 radius-2 m-1 language-js">gid("example_id").delay(1000).fadeOut(200, () => {
+    console.log("Faded Out!") // This will log after 1200ms when the animation is finished
+})</code></pre>
+        </div>
+        <script>hljs.highlightAll();</script>
+    </body>
+</html>
