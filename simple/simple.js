@@ -17,7 +17,7 @@ Object.prototype.insertTop=function(h){this.insertAdjacentHTML("afterbegin",h)}
 Object.prototype.insertBottom=function(h){this.insertAdjacentHTML("beforeend",h)}
 Object.prototype.insertEnd=function(h){this.insertAdjacentHTML("afterend",h)}
 Object.prototype.hide=function(){this.style.display='none'}
-Object.prototype.show=function(){this.style.display='block'}
+Object.prototype.show=function(d=null){if(d==null){this.style.display='block'}else{this.style.display=d}}
 Object.prototype.width=function(){return this.offsetWidth}
 Object.prototype.height=function(){return this.offsetHeight}
 Object.prototype.left=function(){return this.offsetLeft}
