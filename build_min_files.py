@@ -8,21 +8,23 @@ year = date.strftime("%Y")
 files = [
     "simple/simple.js", # Simple.js Library
 
-    "simple/simple.animExt.js", # Simple.AnimExt.js Library
-    "simple/simple.animExt.css", # Simple.AnimExt.css Library
+    "simple/addon/simple.anim.js", # Simple.AnimExt.js Library
+    "simple/addon/simple.anim.css", # Simple.AnimExt.css Library
 
     "custom/custom.css", # Custom.css Library
     "custom/custom.modal.css" # Custom.Modal.css Library
 ]
 
+version = input("Version Name (ex. 1.2.3) > ")
+
 def add_copyright(filename):
-    return f"/* {filename.split('/')[1]} // copyright (c) kgsensei {year} // https://dev.kgsensei.dev */\n"
+    return f"/* {filename.split('/', 1)[1]} v{version} // copyright (c) kgsensei {year} // https://dev.kgsensei.dev */\n"
 
 def css_minify(filename):
     with open(filename, 'r') as file:
         css = compress(file.read())
         
-        newFile = filename.split('/')[1].split('.')
+        newFile = filename.split('/', 1)[1].split('.')
 
         output = open(".".join(newFile[:-1]) + ".min." + newFile[-1], 'w')
         output.write(add_copyright(filename) + css)
@@ -35,7 +37,7 @@ def js_minify(filename):
     with open(filename, 'r') as file:
         js = jsmin(file.read()).replace('\n', ';')
         
-        newFile = filename.split('/')[1].split('.')
+        newFile = filename.split('/', 1)[1].split('.')
 
         output = open(".".join(newFile[:-1]) + ".min." + newFile[-1], 'w')
         output.write(add_copyright(filename) + js)

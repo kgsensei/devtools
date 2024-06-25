@@ -40,6 +40,7 @@
             <a href="/" class="link primary">Return to Home</a><br><br>
             <a href="#setup-installation" class="link primary">Setup/Installation</a><br>
             <a href="#adding-a-modal" class="link primary">Adding A Modal</a>
+            <a href="#sizing-a-modal" class="link primary">Sizing A Modal</a>
         </div>
         <div id="content" class="p-3">
         <h1>Custom.css Ext: Modals Docs</h1>
@@ -59,8 +60,8 @@
         --kg-font: Helvetica, sans-serif;
     }
 &lt;/style&gt;
-&lt;link rel="stylesheet" href="https://dev.kgsensei.dev/custom.min.css"&gt;
-&lt;link rel="stylesheet" href="https://dev.kgsensei.dev/custom.modal.min.css"&gt;</code></pre>
+&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kgsensei/devtools@1.1/custom.min.css"&gt;
+&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kgsensei/devtools@1.1/custom.modal.min.css"&gt;</code></pre>
             We highly recommend learning more about the custom.css library before using the modals extension.
         </div>
         <hr>
@@ -68,7 +69,7 @@
         <div class="p-1">
             Here's some basic HTML code for adding a modal!
             <pre><code class="border-1 radius-2 m-1 language-html">&lt;div class="modal" id="exampleModal"&gt;
-    &lt;div class="dialog radius-3"&gt;
+    &lt;div class="dialog normal radius-3"&gt;
         &lt;div class="header"&gt;Modal Title/Header&lt;/div&gt;
         &lt;div class="content"&gt;
             &lt;a class="link primary" target="_blank" href="https://example.com/terms"&gt;Terms of Service&lt;/a&gt;
@@ -93,10 +94,17 @@ gid("exampleModal_Close").ael("click", () => {
             And here's what we made:
             <button class="btn btn-outline primary" id="exampleModal_Open">Open Modal</button>
         </div>
+        <h2 id="sizing-a-modal">Sizing A Modal</h2>
+            custom.css modals come in three sizes. Small, normal, and large. By simply adding the size class to the modal dialog div you can change the size of the modal.
+            <pre><code class="border-1 radius-2 m-1 language-html">&lt;div class="dialog {small|normal|large} radius-3"&gt;</code></pre>
+            You're always welcome to add your own size too, whatever works best for your project.
+            Keep in mind, the size class will only work if the parent div has the <code>.modal</code> class.
+        <div class="p-1">
+        </div>
         <script>hljs.highlightAll();</script>
 
         <div class="modal" id="exampleModal">
-            <div class="dialog radius-3">
+            <div class="dialog normal radius-3">
                 <div class="header">Modal Title/Header</div>
                 <div class="content">
                     <a class="link primary" target="_blank" href="https://example.com/terms">Terms of Service</a>

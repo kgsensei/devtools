@@ -59,7 +59,7 @@
         --kg-font: Helvetica, sans-serif;
     }
 &lt;/style&gt;
-&lt;link rel="stylesheet" href="https://dev.kgsensei.dev/custom.min.css"&gt;</code></pre>
+&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kgsensei/devtools@1.1/custom.min.css"&gt;</code></pre>
             As you can probably guess, the link tag includes the customs.css library, the other style tag defined defaults
             for the customs.css library to use, it's very important that you do this step or the customs.css library won't work.
             Before you start the documentation, you should know that customs.css takes heavy inspiration from Bootstrap.
@@ -85,17 +85,18 @@
 .m-7 {margin: 10rem;}
 .m-8 {margin: 15rem;}</code></pre>
             Additionally, you can use `mt` for margin-top, `mb` for margin-bottom, `ms` for margin-start/margin-left, and `me`
-            for margin-end/margin-right. Of course, all of the margin properties are reflexted on padding, with all the same
+            for margin-end/margin-right. Of course, all of the margin properties are reflected on padding, with all the same
             values. Just replace `m` with `p`. For example, `pt` for padding-top, `pb` for padding-bottom, etc.<br><br>
             Another helpful feature of customs.css is the existance of zero values, if you want to remove the margin
-            on top of an h1 tag (added by default from the browser) you can add the `mt-0` class to it.
+            on top of an h1 tag (added by default from the browser) you can add the `mt-0` class to it. To apply padding or
+            margin on the top and bottom at the same time you can use {p|m}y-{0<->8} and for both sides {p|m}x-{0<->8}
         </div>
         <hr>
         <h2 id="fs-and-headers">Font Size and Headers</h2>
         <div class="p-1">
-            Again, similar to Bootstrap, you can adjust the font size using `fs-{1-6}`.
+            Again, similar to Bootstrap, you can adjust the font size using `fs-{1<->6}`.
             1 being 1rem, 2 is 1.1rem, 3 is 1.2rem, 4 is 1.3rem, etc.
-            There are also header override classes `h{1-3}`. h1 being 2.7rem, h2 is 2rem,
+            There are also header override classes `h{1<->3}`. h1 being 2.7rem, h2 is 2rem,
             and h3 is 1.6rem. Below is an example with all of the different font sizes.
             <div class="fs-1 p-1">.fs-1</div>
             <div class="fs-2 p-1">.fs-2</div>
@@ -133,6 +134,11 @@
             <pre><code class="border-1 radius-2 m-1 language-html">&lt;button class="btn btn-outline primary"&gt;Hello World!&lt;/button&gt;</code></pre>
             Output:
             <button class="btn btn-outline primary">Hello World!</button>
+            <br>
+            Full Primary Example:
+            <pre><code class="border-1 radius-2 m-1 language-html">&lt;button class="btn btn-full primary"&gt;Hello World!&lt;/button&gt;</code></pre>
+            Output:
+            <button class="btn btn-full primary">Hello World!</button>
             <br><br>
             You can also adjust the size of the buttons.
             <pre><code class="border-1 radius-2 m-1 language-html">&lt;button class="btn btn-outline primary btn-sm"&gt;Hello World!&lt;/button&gt;
@@ -184,6 +190,8 @@
         <hr>
         <h2 id="borders-and-radii">Borders and Radii</h2>
         <div class="p-1">
+            Using the `border-0` class will force no border no matter what, this is useful for things like input boxes.
+            <br>
             For most of this example we'll use a 100x100px div. This one has the `border-1` class.
             <pre><code class="border-1 radius-2 m-1 language-html">&lt;div class="border-1" style="width:100px;height:100px;"&gt;&lt;/div&gt;</code></pre>
             <div class="border-1" style="width:100px;height:100px;"></div>
@@ -222,16 +230,17 @@
             This part is going to be brief since these features aren't really enough to justify their
             own section, we'll only briefly cover each feature instead of doing a deep dive in them.
             <br><br>
-            Image sizing (format, [type]-[shape]-[size]):
-            <pre><code class="border-1 radius-2 m-1 language-css">.img-sq-sm {
+            As of v1.1 image shape has been deprecated
+            Image sizing (format .img-{sm|md|lg} ):
+            <pre><code class="border-1 radius-2 m-1 language-css">.img-sm {
     width: 4rem;
     height: 4rem;
 }
-.img-sq-md {
+.img-md {
     width: 8rem;
     height: 8rem;
 }
-.img-sq-lg {
+.img-lg {
     width: 15rem;
     height: 15rem;
 }</code></pre>
