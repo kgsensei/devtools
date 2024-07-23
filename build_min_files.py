@@ -12,7 +12,8 @@ files = [
     "simple/addon/simple.anim.css", # Simple.AnimExt.css Library
 
     "custom/custom.css", # Custom.css Library
-    "custom/custom.modal.css" # Custom.Modal.css Library
+    "custom/custom.modal.css", # Custom.Modal.css Library
+    "custom/custom.input.css" # Custom.Input.css Library
 ]
 
 version = input("Version Name (ex. 1.2.3) > ")

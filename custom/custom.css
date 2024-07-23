@@ -24,33 +24,31 @@ body{padding:0;margin:0;background-color:var(--kg-bg);color:var(--kg-fg);font-fa
 .btn-full{
     border:solid 1px var(--th-color);
     background-color:var(--th-color);
-    border-radius:.4rem;
+    border-radius:.2rem;
     color:var(--kg-bg);
-    font-size:16px;
-    padding:.4rem .3rem;
+    font-size:1.1rem;
+    padding:.4rem .6rem;
     text-decoration:none;
     text-align:center;
     font-family:var(--kg-font);
-    margin:.3rem;
     transition:background-color 200ms, color 150ms;
 }
 .btn-full:hover{background-color:var(--kg-bg);color:var(--th-color);}
 .btn-outline{
     background-color:var(--kg-bg);
     border:solid 1px var(--th-color);
-    border-radius:.4rem;
+    border-radius:.2rem;
     color:var(--th-color);
-    font-size:16px;
-    padding:.4rem .3rem;
+    font-size:1.1rem;
+    padding:.4rem .6rem;
     text-decoration:none;
     text-align:center;
     font-family:var(--kg-font);
-    margin:.3rem;
     transition:background-color 200ms, color 150ms;
 }
 .btn-outline:hover{background-color:var(--th-color);color:var(--kg-bg);}
-.btn-lg{font-size:19px;}
-.btn-sm{font-size:13px;}
+.btn-lg{font-size:1.175rem;}
+.btn-sm{font-size:0.95rem;}
 
 .text,.link{color:var(--th-color);}
 
