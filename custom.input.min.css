@@ -1,2 +1,2 @@
-/* custom.input.css v1.1.1 // copyright (c) kgsensei 2024 // https://dev.kgsensei.dev */
+/* custom.input.css v1.2 // copyright (c) kgsensei 2025 // https://dev.kgsensei.dev */
 input{--th-color:var(--kg-fg-darker);display:block;background-color:var(--kg-bg);border-radius:.2rem;font-family:var(--kg-font);outline:0;border:solid 1px var(--th-color);padding:.5rem;color:var(--kg-fg);font-size:1.1rem}label{font-size:1.1rem;color:var(--kg-fg-darker);margin-left:.5rem}.label-low{position:relative;top:.5rem}
