@@ -1,0 +1,79 @@
+:root {
+	--color: hsl(0, 0%, 95%);
+	--background: hsl(225, 40%, 4%);
+	--background-secondary: hsl(225, 20%, 6%);
+	--background-lighter: hsl(0, 0%, 30%);
+	--font-family: Arial, sans-serif;
+	--normal-font-size: 16px;
+	--border-radius: 4px;
+	--spacing: 16px;
+	--primary: hsl(220, 50%, 40%);
+	--primary-trans: hsla(220, 50%, 40%, 0.33);
+	--danger: hsl(0, 75%, 35%);
+	--danger-trans: hsla(0, 75%, 35%, 0.33);
+	--warning: hsl(30, 70%, 40%);
+	--warning-trans: hsla(30, 70%, 40%, 0.33);
+	--success: hsl(150, 80%, 30%);
+	--success-trans: hsla(150, 80%, 30%, 0.33);
+	--accent: hsl(220, 50%, 20%);
+	--accent-trans: hsla(220, 50%, 20%, 0.33);
+	--h1-size: 26px;
+	--h2-size: 24px;
+	--h3-size: 22px;
+	--h4-size: 20px;
+	--h5-size: 18px;
+	--h6-size: 16px;
+}
+
+*, *::before, *::after {
+	box-sizing: border-box;
+}
+
+body {
+	background-color: var(--background);
+	color: var(--color);
+	padding: 0;
+	margin: 0;
+}
+
+.btn {
+	background-color: var(--tc);
+	border-radius: var(--border-radius);
+	padding: calc(var(--spacing) / 3) var(--spacing);
+	color: var(--color);
+	cursor: pointer;
+	border: none;
+}
+
+.bold { font-weight: bold; }
+.font { font-family: var(--font-family); }
+.normal { font-size: var(--normal-font-size); }
+.danger { --tc: var(--danger); --tb: var(--danger-trans); }
+.warning { --tc: var(--warning); --tb: var(--warning-trans); }
+.success { --tc: var(--success); --tb: var(--success-trans); }
+.primary { --tc: var(--primary); --tb: var(--primary-trans); }
+.accent { --tc: var(--accent); --tb: var(--accent-trans); }
+
+.h1, .h2, .h3, .h4, .h5, .h6 { margin: 0; }
+.h1 { font-size: var(--h1-size); }
+.h2 { font-size: var(--h2-size); }
+.h3 { font-size: var(--h3-size); }
+.h4 { font-size: var(--h4-size); }
+.h5 { font-size: var(--h5-size); }
+.h6 { font-size: var(--h6-size); }
+
+input.input, textarea.input, select.input {
+	padding: calc(var(--spacing) / 3) calc(var(--spacing) / 2);
+	border: solid 1px var(--lighter-background);
+	background-color: var(--background);
+	border-radius: var(--border-radius);
+	color: var(--color);
+	outline: none;
+}
+
+.pseudotoast {
+	border-radius: var(--border-radius);
+	border: solid 1px var(--tc);
+	background-color: var(--tb);
+	padding: calc(var(--spacing) / 2) calc(var(--spacing));
+}

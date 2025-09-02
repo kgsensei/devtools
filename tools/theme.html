@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf8">
+		<title>theme creator by kgsensei</title>
+		<link rel="stylesheet" href="css/theme.css">
+		<script src="../simple/simple.js"></script>
+	</head>
+	<body>
+		<div class="d-flex">
+			<div>
+				<div class="dialog">
+					<h2 class="font bold normal">Confirm?</h2>
+					<p class="font normal">
+						Are you sure you would like to continue?
+					</p>
+					<button class="tint font normal btn">Cancel</button>
+					<button class="primary font normal btn">Confirm</button>
+				</div>
+				<div class="dialog">
+					<h2 class="font bold normal">Delete?</h2>
+					<p class="font normal">
+						Are you sure you would like to delete this post?
+					</p>
+					<button class="tint font normal btn">Cancel</button>
+					<button class="danger font normal btn">Delete</button>
+				</div>
+				<div class="dialog">
+					<h2 class="font bold normal">Caution?</h2>
+					<p class="font normal">
+						Do you want to quit without saving your changes?
+					</p>
+					<button class="tint font normal btn">Cancel</button>
+					<button class="warning font normal btn">Continue</button>
+				</div>
+				<div class="dialog">
+					<h2 class="font bold normal">Accept?</h2>
+					<p class="font normal">
+						Are you sure you would like to accept these changes?
+					</p>
+					<button class="tint font normal btn">Cancel</button>
+					<button class="success font normal btn">Accept</button>
+				</div>
+			</div>
+			<div class="pt-1">
+				<h1 class="font h1">Heading 1</h1>
+				<h2 class="font h2">Heading 2</h2>
+				<h3 class="font h3">Heading 3</h3>
+				<h4 class="font h4">Heading 4</h4>
+				<h5 class="font h5">Heading 5</h5>
+				<h6 class="font h6">Heading 6</h6>
+				<p class="font normal">
+					Paragraph
+				</p>
+				<hr>
+				<button class="tint font normal btn">Tint</button>
+				<button class="primary font normal btn">Primary</button>
+				<hr>
+				<button class="danger font normal btn">Danger</button>
+				<button class="warning font normal btn">Warning</button>
+				<button class="success font normal btn">Success</button>
+			</div>
+			<div class="pt-1 ms-1">
+				<input class="font normal input w-100" type="text" placeholder="Text Input">
+				<br class="mb-1">
+				<input class="font normal input w-100" type="password" placeholder="Password Input">
+				<br class="mb-1">
+				<label for="checkbox" class="font normal">Checkbox</label>
+				<input id="checkbox" class="font normal input" type="checkbox">
+				<br class="mb-1">
+				<input class="font normal input" type="range">
+				<br class="mb-1">
+				<textarea class="font normal input" style="resize: vertical;">Text Area</textarea>
+				<br class="mb-1">
+				<select class="font normal input w-100">
+					<option selected>Select</option>
+					<option>Tag</option>
+				</select>
+			</div>
+			<div class="pt-1 ms-1">
+				<div
+					class="pseudotoast font normal tint mb-1"
+					style="--theme-blend: var(--tint-trans);">
+					Tint Text in Pseudo-Toast
+				</div>
+				<div
+					class="pseudotoast font normal primary mb-1"
+					style="--theme-blend: var(--primary-trans);">
+					Primary Text in Pseudo-Toast
+				</div>
+				<div
+					class="pseudotoast font normal danger mb-1"
+					style="--theme-blend: var(--danger-trans);">
+					Danger Text in Pseudo-Toast
+				</div>
+				<div
+					class="pseudotoast font normal warning mb-1"
+					style="--theme-blend: var(--warning-trans);">
+					Warning Text in Pseudo-Toast
+				</div>
+				<div
+					class="pseudotoast font normal success mb-1"
+					style="--theme-blend: var(--success-trans);">
+					Success Text in Pseudo-Toast
+				</div>
+			</div>
+		</div>
+		<div id="controls">
+			<h2 class="ctrl_h2 ctrl_font">kgsensei theme editor</h2>
+			<hr>
+			<label class="ctrl_lbl">Primary [HSL]</label>
+			<div class="hsl" data-control="--primary">
+				<input type="number" placeholder="DEG" value="198">
+				<input type="number" placeholder="SAT" value="50">
+				<input type="number" placeholder="LGH" value="40">
+				<div></div>
+			</div>
+			<label class="ctrl_lbl">Danger [HSL]</label>
+			<div class="hsl" data-control="--danger">
+				<input type="number" placeholder="DEG" value="0">
+				<input type="number" placeholder="SAT" value="80">
+				<input type="number" placeholder="LGH" value="35">
+				<div></div>
+			</div>
+			<label class="ctrl_lbl">Warning [HSL]</label>
+			<div class="hsl" data-control="--warning">
+				<input type="number" placeholder="DEG" value="35">
+				<input type="number" placeholder="SAT" value="65">
+				<input type="number" placeholder="LGH" value="35">
+				<div></div>
+			</div>
+			<label class="ctrl_lbl">Success [HSL]</label>
+			<div class="hsl" data-control="--success">
+				<input type="number" placeholder="DEG" value="143">
+				<input type="number" placeholder="SAT" value="80">
+				<input type="number" placeholder="LGH" value="25">
+				<div></div>
+			</div>
+			<label class="ctrl_lbl">Tint [HSL]</label>
+			<div class="hsl" data-control="--tint">
+				<input type="number" placeholder="DEG" value="198">
+				<input type="number" placeholder="SAT" value="50">
+				<input type="number" placeholder="LGH" value="20">
+				<div></div>
+			</div>
+			<label class="ctrl_lbl">Border [HSL]</label>
+			<div class="hsl" data-control="--lighter-background">
+				<input type="number" placeholder="DEG" value="0">
+				<input type="number" placeholder="SAT" value="0">
+				<input type="number" placeholder="LGH" value="60">
+				<div></div>
+			</div>
+			<label class="ctrl_lbl">Text Color [HSL]</label>
+			<div class="hsl" data-control="--color">
+				<input type="number" placeholder="DEG" value="0">
+				<input type="number" placeholder="SAT" value="0">
+				<input type="number" placeholder="LGH" value="80">
+				<div></div>
+			</div>
+			<label class="ctrl_lbl">Background [HSL]</label>
+			<div class="hsl" data-control="--background">
+				<input type="number" placeholder="DEG" value="0">
+				<input type="number" placeholder="SAT" value="0">
+				<input type="number" placeholder="LGH" value="13">
+				<div></div>
+			</div>
+			<label class="ctrl_lbl">Background Secondary [HSL]</label>
+			<div class="hsl" data-control="--background-secondary">
+				<input type="number" placeholder="DEG" value="0">
+				<input type="number" placeholder="SAT" value="0">
+				<input type="number" placeholder="LGH" value="7">
+				<div></div>
+			</div>
+			<label class="ctrl_lbl">Border Radius [PX]</label>
+			<div class="single-control" data-control="--border-radius">
+				<input type="number" placeholder="DEG" value="4">
+			</div>
+			<label class="ctrl_lbl">Spacing [PX]</label>
+			<div class="single-control" data-control="--spacing">
+				<input type="number" placeholder="PX" value="16">
+			</div>
+			<label class="ctrl_lbl">Normal Font Size [PX]</label>
+			<div class="single-control" data-control="--normal-font-size">
+				<input type="number" placeholder="PX" value="16">
+			</div>
+			<label class="ctrl_lbl">H1 Size [PX]</label>
+			<div class="single-control" data-control="--h1-size">
+				<input type="number" placeholder="PX" value="26">
+			</div>
+			<label class="ctrl_lbl">H2 Size [PX]</label>
+			<div class="single-control" data-control="--h2-size">
+				<input type="number" placeholder="PX" value="24">
+			</div>
+			<label class="ctrl_lbl">H3 Size [PX]</label>
+			<div class="single-control" data-control="--h3-size">
+				<input type="number" placeholder="PX" value="22">
+			</div>
+			<label class="ctrl_lbl">H4 Size [PX]</label>
+			<div class="single-control" data-control="--h4-size">
+				<input type="number" placeholder="PX" value="20">
+			</div>
+			<label class="ctrl_lbl">H5 Size [PX]</label>
+			<div class="single-control" data-control="--h5-size">
+				<input type="number" placeholder="PX" value="18">
+			</div>
+			<label class="ctrl_lbl">H6 Size [PX]</label>
+			<div class="single-control" data-control="--h6-size">
+				<input type="number" placeholder="PX" value="16">
+			</div>
+			<button id="export" class="btn w-100">Export CSS</button>
+		</div>
+		<div id="export_dialog" style="display: none;">
+			<div id="export_dialog_content"></div>
+		</div>
+		<script src="js/themecontrols.js"></script>
+	</body>
+</html>
